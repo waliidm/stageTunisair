@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AutorisationsRepository extends JpaRepository<AutorisationsEntity, Integer> {
     Iterable<AutorisationsEntity> findALLByMatricule(String mat);
+    //Iterable<AutorisationsEntity> findResponsable(String mat);
 }

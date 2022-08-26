@@ -20,8 +20,11 @@ public class UtilisateursEntity {
     @Column(name = "email", nullable = false, length = 50)
     private String email;
     @Basic
-    @Column(name = "matricule_responsable", nullable = false, length = 15)
+    @Column(name = "matricule_responsable", nullable = true, length = 15)
     private String matriculeResponsable;
+    @Basic
+    @Column(name = "role", nullable = false, length = 15)
+    private String role;
 
     public String getMatricule() {
         return matricule;
@@ -74,5 +77,13 @@ public class UtilisateursEntity {
     @Override
     public int hashCode() {
         return Objects.hash(matricule, mdp, nomPrenom, email, matriculeResponsable);
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }

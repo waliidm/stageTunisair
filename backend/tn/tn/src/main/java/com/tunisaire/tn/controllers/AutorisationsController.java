@@ -5,11 +5,13 @@ import com.tunisaire.tn.entity.BadgeageEntity;
 import com.tunisaire.tn.services.AutorisationsService;
 import com.tunisaire.tn.services.BadgeageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class AutorisationsController {
     private AutorisationsService autorisationsService;
 
@@ -30,5 +32,11 @@ public class AutorisationsController {
 
 
         return autorisationsService.findMatricule(mat);
+    }
+    @GetMapping(value = "/autorisations/responsable/{id}")
+    public Iterable<AutorisationsEntity>  findALLByResponsable(@PathVariable("id") String mat){
+
+
+        return autorisationsService.Responsable(mat);
     }
 }
