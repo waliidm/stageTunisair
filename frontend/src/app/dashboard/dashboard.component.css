@@ -7,3 +7,86 @@ opacity: 1;
 .fc-widget-header{
     background-color:blue;
 }
+full-calendar{
+    margin-top: 10%;
+    border: 2px bold black !important;
+    
+}
+.show-content ::ng-deep .fc-daygrid.fc-dayGridMonth-view.fc-view {
+    visibility: visible !important;
+}
+/* ::ng-deep body .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events,
+body .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-bg,
+body .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-bg {
+    display: none !important;
+}
+::ng-deep body .fc .fc-daygrid-day-top {
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    margin: auto;
+    border: 1px solid transparent;
+    margin-top: 8px;
+    border-radius: 6px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 25%);
+    border-radius: 10px;
+} 
+::ng-deep .fc.fc-theme-standard .fc-view-harness td {
+    border: none !important;
+    background: #fff !important;
+}
+::ng-deep body .fc.fc-theme-standard .fc-view-harness th {
+    border: none !important;
+    background: #fff !important;
+}
+::ng-deep .fc.fc-theme-standard .fc-toolbar .fc-button:disabled {
+    display: none;
+}
+::ng-deep .fc .fc-col-header-cell-cushion {
+    padding: 10px 4px !important;
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+    border-radius: 5px;
+    width: 65px;
+    height: 40px;
+    margin: 12px auto;
+    text-align: center;
+}
+::ng-deep .fc.fc-theme-standard a {
+    font-size: 17px;
+}
+::ng-deep .fc.fc-media-screen.fc-direction-ltr.fc-theme-standard {
+    background: #ffffff;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 25%);
+    border-radius: 10px;
+    padding: 32px 24px 20px 24px;
+    margin-left: 10px;
+}
+::ng-deep .fc.fc-theme-standard .fc-view-harness .fc-scrollgrid {
+    border: none;
+}
+::ng-deep .fc-daygrid-day-top .fc-daygrid-day-number {
+    color: inherit !important;
+    font-size: 18px !important;
+}
+::ng-deep .fc .fc-button-group {
+    visibility: hidden;
+}
+::ng-deep .fc.fc-theme-standard .fc-toolbar .fc-button {
+    display: none;
+}
+*/
+::ng-deep body .fc .fc-today-button{
+    background-color: #f44336;
+    border-color: white;
+}
+::ng-deep body .fc .fc-today-button:hover{
+    background-color: black;
+    border-color: white;
+}
+::ng-deep .fc .fc-prev-button .fc-button .fc-button-primary{
+    background-color: #f44336;
+}

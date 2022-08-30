@@ -23,6 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
+import { DeplacementsListComponent } from 'app/deplacements-list/deplacements-list.component';
+import { MouvementsListComponent } from 'app/mouvements-list/mouvements-list.component';
 FullCalendarModule.registerPlugins([interactionPlugin, dayGridPlugin]);
 @NgModule({
   imports: [
@@ -52,6 +54,8 @@ FullCalendarModule.registerPlugins([interactionPlugin, dayGridPlugin]);
     MapsComponent,
     NotificationsComponent,
     UpgradeComponent,
+    DeplacementsListComponent,
+    MouvementsListComponent,
   ]
 })
 

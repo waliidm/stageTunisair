@@ -8,6 +8,8 @@ import { IconsComponent } from '../../icons/icons.component';
 import { MapsComponent } from '../../maps/maps.component';
 import { NotificationsComponent } from '../../notifications/notifications.component';
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
+import { DeplacementsListComponent } from 'app/deplacements-list/deplacements-list.component';
+import { MouvementsListComponent } from 'app/mouvements-list/mouvements-list.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -55,6 +57,8 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
+    { path: 'deplacements-list',component: DeplacementsListComponent },
+    { path: 'mouvements-list',component: MouvementsListComponent },
     { path: 'typography',     component: TypographyComponent },
     { path: 'icons',          component: IconsComponent },
     { path: 'maps',           component: MapsComponent },

@@ -55,13 +55,48 @@ getPointage(mat:String){
       for (let key in element)
         {
       console.log(key)
-    let temp = {title :element[key]["heureBadgeage"],date:element[key]["dateBadgeage"],backgroundColor: '#f44336'}
+    let temp = {title :element[key]["heureBadgeage"],date:element[key]["dateBadgeage"],backgroundColor: '#f44336',borderColor:'white'}
     console.log(temp)
     list.push(temp);
         }
 });
 return list;
 }
+
+getInfoDeplacement(mat:String) {
+  console.log("here");
+  let headers = new HttpHeaders()
+    .set('content-type', 'application/json')
+    .set('Access-Control-Allow-Origin', '*')
+    .set('Accept', '*/*');
+  return this.http.get(`http://127.0.0.1:8082/deplacements/${mat}`, { 'headers': headers })
+}
+getInfoDeplacementResponsable(mat:String) {
+  console.log("here");
+  let headers = new HttpHeaders()
+    .set('content-type', 'application/json')
+    .set('Access-Control-Allow-Origin', '*')
+    .set('Accept', '*/*');
+  return this.http.get(`http://127.0.0.1:8082/deplacements/responsable/${mat}`, { 'headers': headers })
+}
+
+getInfoMouvement(mat:String) {
+  console.log("here");
+  let headers = new HttpHeaders()
+    .set('content-type', 'application/json')
+    .set('Access-Control-Allow-Origin', '*')
+    .set('Accept', '*/*');
+  return this.http.get(`http://127.0.0.1:8082/mouvements/${mat}`, { 'headers': headers })
+}
+getInfoMouvementResponsable(mat:String) {
+  console.log("here");
+  let headers = new HttpHeaders()
+    .set('content-type', 'application/json')
+    .set('Access-Control-Allow-Origin', '*')
+    .set('Accept', '*/*');
+  return this.http.get(`http://127.0.0.1:8082/mouvements/responsable/${mat}`, { 'headers': headers })
+}
+
 }
 interface res {
   title: any;
