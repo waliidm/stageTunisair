@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 public interface UtilisateursRepository extends JpaRepository<UtilisateursEntity, Integer> {
 
     Iterable<UtilisateursEntity> findALLByMatriculeResponsable(String mat);
+    UtilisateursEntity findByMatricule(String mat);
 }

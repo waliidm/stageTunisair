@@ -8,6 +8,8 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { DeplacementsListComponent } from './deplacements-list/deplacements-list.component';
+import { LoginComponent } from './login/login.component';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -21,11 +23,15 @@ import { DeplacementsListComponent } from './deplacements-list/deplacements-list
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    MatButtonModule,
 
   ],
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    LoginComponent,
+    
+    
 
 
 

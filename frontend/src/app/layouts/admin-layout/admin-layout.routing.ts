@@ -10,6 +10,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { DeplacementsListComponent } from 'app/deplacements-list/deplacements-list.component';
 import { MouvementsListComponent } from 'app/mouvements-list/mouvements-list.component';
+import { LoginComponent } from 'app/login/login.component';
 
 export const AdminLayoutRoutes: Routes = [
     // {
@@ -64,4 +65,5 @@ export const AdminLayoutRoutes: Routes = [
     { path: 'maps',           component: MapsComponent },
     { path: 'notifications',  component: NotificationsComponent },
     { path: 'walid',        component: UpgradeComponent },
+
 ];

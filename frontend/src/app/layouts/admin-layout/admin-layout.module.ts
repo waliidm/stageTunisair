@@ -25,6 +25,8 @@ import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import { DeplacementsListComponent } from 'app/deplacements-list/deplacements-list.component';
 import { MouvementsListComponent } from 'app/mouvements-list/mouvements-list.component';
+import { LoginComponent } from 'app/login/login.component';
+
 FullCalendarModule.registerPlugins([interactionPlugin, dayGridPlugin]);
 @NgModule({
   imports: [
@@ -56,6 +58,7 @@ FullCalendarModule.registerPlugins([interactionPlugin, dayGridPlugin]);
     UpgradeComponent,
     DeplacementsListComponent,
     MouvementsListComponent,
+
   ]
 })
 
