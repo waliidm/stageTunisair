@@ -14,6 +14,8 @@
 	<name>stage</name>
 	<description>stage</description>
 	<properties>
+		<spring.version>5.0.2.RELEASE</spring.version>
+
 		<java.version>18</java.version>
 	</properties>
 	<dependencies>

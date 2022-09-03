@@ -5,6 +5,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 
+import com.tunisaire.tn.payload.request.SignupRequest;
 import com.tunisaire.tn.repositories.UtilisateursRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,9 +29,10 @@ import com.tunisaire.tn.security.jwt.JwtUtils;
 import com.tunisaire.tn.security.services.UserDetailsImpl;
 
 import com.tunisaire.tn.entity.UtilisateursEntity;
-@CrossOrigin(origins = "*", maxAge = 3600)
+
 @RestController
 @RequestMapping("/api/auth")
+@CrossOrigin(origins = "http://localhost:4200")
 public class AuthController {
     @Autowired
     AuthenticationManager authenticationManager;
@@ -54,8 +56,8 @@ public class AuthController {
                 userDetails.getRole()
                 ));
     }
-//    @PostMapping("/signup")
-//    public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
+    @PostMapping("/signup")
+    public ResponseEntity<?> registerUser( @RequestBody SignupRequest signUpRequest) {
 //        if (userRepository.existsByUsername(signUpRequest.getUsername())) {
 //            return ResponseEntity
 //                    .badRequest()
@@ -66,38 +68,15 @@ public class AuthController {
 //                    .badRequest()
 //                    .body(new MessageResponse("Error: Email is already in use!"));
 //        }
-//        // Create new user's account
-//        User user = new User(signUpRequest.getUsername(),
-//                signUpRequest.getEmail(),
-//                encoder.encode(signUpRequest.getPassword()));
-//        Set<String> strRoles = signUpRequest.getRole();
-//        Set<Role> roles = new HashSet<>();
-//        if (strRoles == null) {
-//            Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-//                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-//            roles.add(userRole);
-//        } else {
-//            strRoles.forEach(role -> {
-//                switch (role) {
-//                    case "admin":
-//                        Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
-//                                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-//                        roles.add(adminRole);
-//                        break;
-//                    case "mod":
-//                        Role modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
-//                                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-//                        roles.add(modRole);
-//                        break;
-//                    default:
-//                        Role userRole = roleRepository.findByName(ERole.ROLE_USER)
-//                                .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-//                        roles.add(userRole);
-//                }
-//            });
-//        }
-//        user.setRoles(roles);
-//        userRepository.save(user);
-//        return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
-//    }
+        // Create new user's account
+        UtilisateursEntity user = new UtilisateursEntity(signUpRequest.getMatricule(),
+                encoder.encode(signUpRequest.getPassword( )),
+                signUpRequest.getNom_prenom(),
+                signUpRequest.getEmail(),
+                signUpRequest.getRole());
+        System.out.println(user
+        );
+        userRepository.save(user);
+        return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+    }
 }

@@ -21,7 +21,10 @@ export class DeplacementsListComponent implements OnInit {
   @ViewChild('sortResp') sortResp: MatSort;
   constructor(private dataService: DataService) { }
   curr:Utilisateurs;
+  role:string;
   ngOnInit() {
+    this.role=localStorage.getItem('role');
+    console.log(this.role);
     this.curr=this.dataService.getUser();
     this.dataService.getInfoDeplacement(this.dataService.getLoggedUser()).subscribe((res:any)=>{
 

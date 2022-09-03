@@ -6,7 +6,7 @@ import java.util.Objects;
 @Entity
 @Table(name = "utilisateurs", schema = "tunisairdb", catalog = "")
 public class UtilisateursEntity {
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Id
     @Column(name = "matricule", nullable = false, length = 15)
     private String matricule;
@@ -85,5 +85,32 @@ public class UtilisateursEntity {
 
     public void setRole(String role) {
         this.role = role;
+    }
+
+    public UtilisateursEntity(String matricule, String mdp, String nomPrenom, String email, String role) {
+
+
+        this.nomPrenom = nomPrenom;
+        this.email = email;
+        this.matriculeResponsable=null;
+        this.mdp = mdp;
+        this.matricule = matricule;
+        this.role = role;
+    }
+
+    @Override
+    public String toString() {
+        return "UtilisateursEntity{" +
+                "matricule='" + matricule + '\'' +
+                ", mdp='" + mdp + '\'' +
+                ", nomPrenom='" + nomPrenom + '\'' +
+                ", email='" + email + '\'' +
+                ", matriculeResponsable='" + matriculeResponsable + '\'' +
+                ", role='" + role + '\'' +
+                '}';
+    }
+
+    public UtilisateursEntity() {
+
     }
 }

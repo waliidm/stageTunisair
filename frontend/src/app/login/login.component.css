@@ -4,13 +4,15 @@
     position: relative;
     background-color: #f44336;
     opacity: 0.8;
+    background-image: url("../../assets/img/planeOp.png");
+    background-size: cover;
 }
 .card{
-    height: 80%;
-    width: 50%;
+    height: 70%;
+    width: 40%;
     position: absolute;
     left: 50%;
-    top: 48%;
+    top: 50%;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     border-radius: 25px;

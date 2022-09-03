@@ -20,7 +20,9 @@ export class MouvementsListComponent implements OnInit {
   @ViewChild('sortResp') sortResp: MatSort;
   constructor(private dataService: DataService) { }
   curr:Utilisateurs;
+  role:string;
   ngOnInit() {
+    this.role=localStorage.getItem('role');
     this.curr=this.dataService.getUser();
     this.dataService.getInfoMouvement(this.dataService.getLoggedUser()).subscribe((res:any)=>{
 

@@ -10,6 +10,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { DeplacementsListComponent } from './deplacements-list/deplacements-list.component';
 import { LoginComponent } from './login/login.component';
 import {MatButtonModule} from '@angular/material/button';
+import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
+import { SignupComponent } from './signup/signup.component';
 
 
 
@@ -30,6 +32,7 @@ import {MatButtonModule} from '@angular/material/button';
     AppComponent,
     AdminLayoutComponent,
     LoginComponent,
+    SignupComponent,
     
     
 
@@ -37,7 +40,7 @@ import {MatButtonModule} from '@angular/material/button';
 
 
   ],
-  providers: [],
+  providers: [{ provide: JWT_OPTIONS, useValue: JWT_OPTIONS }, JwtHelperService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
