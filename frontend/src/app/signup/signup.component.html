@@ -1,1 +1,53 @@
-<p>signup works!</p>
+<div class="main">
+    <div class="card ">
+        <div class="row img">
+            <div class="col-md-12">
+                <div class="row">
+                    <img src="../../assets/img/logo.png" width="50%" class="logo" >
+                </div>
+                <div class="row mainrow" >
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                        
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="form">Matricule</label>
+                            <input type="email" class="form-control  input-block-level" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Matricule"  [(ngModel)]="matricule">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="form">Nom et Prénom</label>
+                            <input type="text" class="form-control  input-block-level" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nom et Prénom"  [(ngModel)]="nom_prenom">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" class="form">Email</label>
+                            <input type="text" class="form-control  input-block-level" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email"  [(ngModel)]="email">
+                            
+                        </div>
+                        <div class="form-group">
+                            <mat-form-field appearance="fill" >
+                                <mat-label>Role</mat-label>
+                                <mat-select [(ngModel)]="role" name="Role" >
+                                    <mat-option  value="utilisateur">Utilisateur</mat-option>
+                                    <mat-option  value="responsable">Résponsable</mat-option>
+                                </mat-select>
+                            </mat-form-field>                            
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" class="form">Mot de passe</label>
+                            <input type="password" class="form-control  input-xlarge" id="exampleInputPassword1" placeholder="Mot de passe"  [(ngModel)]="mdp">
+                          </div>
+                          <div *ngIf="showErrorMessage">
+                            <h1 class="form">{{error}}</h1>
+                          </div>
+                          <button mat-raised-button color="warn" (click)="signin()">Se connecter</button>
+                    </div>
+                    <div class="col-2"></div>
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

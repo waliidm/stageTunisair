@@ -4,8 +4,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-danger">
-                        <h3 class="card-title ">Nom : {{curr.nomPrenom}}</h3>
-                        <p class="card-category">Matricule : {{curr.matricule}}</p>
+                      <h3 class="card-title ">Matricule : {{curr.matricule}}</h3>
+                      <p class="card-category">Role : {{curr.role}}</p>
                     </div>
                     <div class="card-body ">
                               <mat-form-field appearance="standard">
@@ -57,10 +57,16 @@
                       <p></p>
                   </div>
                   <div class="card-body ">
-                            <mat-form-field appearance="standard">
-                                <mat-label>Filter</mat-label>
-                                <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
-                            </mat-form-field>
+                    <mat-form-field appearance="standard" *ngIf="this.role==='chefProjet'">
+                      <mat-label>Chercher un utilisateur</mat-label>
+                      <input matInput  placeholder="Ex. ium" [(ngModel)]="adminuser">
+                      
+                  </mat-form-field>
+                  <button mat-raised-button color="warn" (click)="findUser()" *ngIf="this.role==='chefProjet'">Chercher</button>
+                        <mat-form-field appearance="standard">
+                            <mat-label>Filter</mat-label>
+                            <input matInput (keyup)="applyFilterRes($event)" placeholder="Ex. ium" #inputRes>
+                        </mat-form-field>
                         <table mat-table  [dataSource]="dataSourceResp" class="mat-elevation-z3 table" sortResp>
   
                             <!--- Note that these columns can be defined in any order.

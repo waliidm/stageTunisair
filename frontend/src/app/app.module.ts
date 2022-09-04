@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import {MatButtonModule} from '@angular/material/button';
 import { JwtHelperService, JWT_OPTIONS } from '@auth0/angular-jwt';
 import { SignupComponent } from './signup/signup.component';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -26,6 +27,7 @@ import { SignupComponent } from './signup/signup.component';
     RouterModule,
     AppRoutingModule,
     MatButtonModule,
+    MatSelectModule,
 
   ],
   declarations: [

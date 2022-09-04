@@ -10,7 +10,8 @@ import { DataService } from 'app/data.service';
 })
 export class DashboardComponent implements OnInit {
   Events: any[] = [];
-  
+  adminuser:string;
+  role:string;
   calendarOptions: CalendarOptions = {
     headerToolbar: {
       left: 'prev,next today',
@@ -27,9 +28,11 @@ export class DashboardComponent implements OnInit {
   };
   constructor(private dataService: DataService) { }
   ngOnInit(): void {
+    this.role=localStorage.getItem('role');
+    console.log(this.role);
     setTimeout(() => {
   
-          this.Events=this.dataService.getPointage("18956");
+          this.Events=this.dataService.getPointage(this.dataService.getLoggedUser());
           
     }, 2200);
     setTimeout(() => {
@@ -40,6 +43,20 @@ export class DashboardComponent implements OnInit {
       };
     }, 2500);
     
+  }
+  findUser(){
+    setTimeout(() => {
+  
+      this.Events=this.dataService.getPointage(this.adminuser);
+      
+}, 1000);
+setTimeout(() => {
+  this.calendarOptions = {
+    initialView: 'dayGridMonth',
+    
+    events: this.Events,
+  };
+}, 1100);
   }
 
 }

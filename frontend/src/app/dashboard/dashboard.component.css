@@ -83,10 +83,28 @@ body .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-bg {
     background-color: #f44336;
     border-color: white;
 }
+::ng-deep body .fc .fc-today-button:disabled{
+    background-color: #f44336;
+    border-color: white;
+}
 ::ng-deep body .fc .fc-today-button:hover{
     background-color: black;
     border-color: white;
 }
-::ng-deep .fc .fc-prev-button .fc-button .fc-button-primary{
+::ng-deep body .fc .fc-button-primary {
     background-color: #f44336;
+    border-color: white;
 }
+::ng-deep #fc-dom-1{
+     color: #f44336; }
+::ng-deep body .fc .fc-col-header-cell-cushion {
+    color: black;
+}     
+::ng-deep body .fc .fc-daygrid-day-number {
+    color: black;
+}     
+::ng-deep body  .fc .fc-daygrid-day-frame{
+    border-color: black;
+}
+::ng-deep body .fc .fc-view-harness {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}

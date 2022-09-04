@@ -16,6 +16,7 @@ export class TableListComponent implements OnInit {
   displayedColumnsResp: string[] = ['matricule','beneficiaireAutorisations','dateSortieAutorisations', 'heureSortieAutorisations', 'heureRetourAutorisations'];
   dataSource: MatTableDataSource<any>;
   dataSourceResp: MatTableDataSource<any>;
+  adminuser:string;
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild('paginatorResp') paginatorResp: MatPaginator;
@@ -24,6 +25,8 @@ export class TableListComponent implements OnInit {
   curr:Utilisateurs;
   role:string;
   ngOnInit() {
+
+
     this.role=localStorage.getItem('role');
     this.curr=this.dataService.getUser();
     this.dataService.getInfoAutorisation(this.dataService.getLoggedUser()).subscribe((res:any)=>{
@@ -54,5 +57,23 @@ export class TableListComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     console.log(filterValue)
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  applyFilterRes(event: Event) {
+    
+    const filterValue = (event.target as HTMLInputElement).value;
+    console.log(filterValue)
+    this.dataSourceResp.filter = filterValue.trim().toLowerCase();
+  }
+  findUser(){
+    this.dataService.getInfoAutorisation(this.adminuser).subscribe((res:any)=>{
+
+      this.dataSourceResp=new MatTableDataSource(res);
+      console.log(this.dataSourceResp)
+      this.dataSourceResp.paginator = this.paginatorResp;
+     this.dataSourceResp.sort = this.sortResp;
+      }, (err) => {
+        this.dataSourceResp=new MatTableDataSource();
+      }
+      );
   }
 }

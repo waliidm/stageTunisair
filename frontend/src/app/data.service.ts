@@ -26,18 +26,18 @@ export class DataService {
   }
 getLoggedUser()
 {
-  return "1";
+  return localStorage.getItem('matricule');
 }
 getLoggedRole()
 {
-  return "responsable";
+  return localStorage.getItem("role");
 }
 getUser()
 {
-  const currentuser:Utilisateurs={'matricule':'1',
+  const currentuser:Utilisateurs={'matricule':localStorage.getItem('matricule'),
     'nomPrenom':'walid',
     'email':'mehrezw@mail.com',
-    'role':'responsable',
+    'role':localStorage.getItem('role'),
     'matriculeResponsable':''
 }
 return currentuser;
@@ -54,9 +54,7 @@ getPointage(mat:String){
     req.forEach(element => {
       for (let key in element)
         {
-      console.log(key)
     let temp = {title :element[key]["heureBadgeage"],date:element[key]["dateBadgeage"],backgroundColor: '#f44336',borderColor:'white'}
-    console.log(temp)
     list.push(temp);
         }
 });

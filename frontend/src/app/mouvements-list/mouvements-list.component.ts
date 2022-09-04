@@ -21,6 +21,7 @@ export class MouvementsListComponent implements OnInit {
   constructor(private dataService: DataService) { }
   curr:Utilisateurs;
   role:string;
+  adminuser:string;
   ngOnInit() {
     this.role=localStorage.getItem('role');
     this.curr=this.dataService.getUser();
@@ -47,11 +48,31 @@ export class MouvementsListComponent implements OnInit {
   }
 
 
+
+
   applyFilter(event: Event) {
     
     const filterValue = (event.target as HTMLInputElement).value;
     console.log(filterValue)
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  applyFilterRes(event: Event) {
+    
+    const filterValue = (event.target as HTMLInputElement).value;
+    console.log(filterValue)
+    this.dataSourceResp.filter = filterValue.trim().toLowerCase();
+  }
+  findUser(){
+    this.dataService.getInfoMouvement(this.adminuser).subscribe((res:any)=>{
+
+      this.dataSourceResp=new MatTableDataSource(res);
+      console.log(this.dataSourceResp)
+      this.dataSourceResp.paginator = this.paginatorResp;
+     this.dataSourceResp.sort = this.sortResp;
+      }, (err) => {
+        this.dataSourceResp=new MatTableDataSource();
+      }
+      );
   }
 
 }
