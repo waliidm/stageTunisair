@@ -108,3 +108,8 @@ body .fc .fc-daygrid-body-unbalanced .fc-daygrid-day-bg {
 }
 ::ng-deep body .fc .fc-view-harness {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;}
+    .form{
+        color: #f44336;
+        font-weight: bold;
+        font-size: 20px;
+    }
